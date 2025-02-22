@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox & Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Front-End Lecture ( CSS ) - Session 7</h1>
+        <nav>
+            <ul>
+                <li><h2><a href="#flexbox-grid">Flexbox & Grid</a></h2></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Flexbox & Grid Section -->
+        <section id="flexbox-grid">
+            <h2>Flexbox & Grid</h2>
+
+            <!-- Flexbox Parent -->
+            <article>
+                <h3>Flex Box – Parent – Direction, Wrap, Flow</h3>
+                <p>Flexbox is a layout model that allows you to design flexible and responsive layouts. The <code>flex-direction</code> property defines the direction of the flex items, <code>flex-wrap</code> controls whether the items should wrap or not, and <code>flex-flow</code> is a shorthand for both.</p>
+                <pre><code>.container {
+    display: flex;
+    flex-direction: row; /* row, row-reverse, column, column-reverse */
+    flex-wrap: wrap; /* wrap, nowrap, wrap-reverse */
+    flex-flow: row wrap; /* shorthand for direction and wrap */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" alt="Flexbox Direction">
+            </article>
+
+            <article>
+                <h3>Flex Box – Parent – Justify Content</h3>
+                <p><code>justify-content</code> aligns flex items along the main axis. It controls the spacing between and around items.</p>
+                <pre><code>.container {
+    display: flex;
+    justify-content: center; /* flex-start, flex-end, center, space-between, space-around, space-evenly */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" alt="Justify Content">
+            </article>
+
+            <article>
+                <h3>Flex Box – Parent – Align Items</h3>
+                <p><code>align-items</code> aligns flex items along the cross axis. It controls how items are positioned vertically.</p>
+                <pre><code>.container {
+    display: flex;
+    align-items: center; /* flex-start, flex-end, center, stretch, baseline */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" alt="Align Items">
+            </article>
+
+            <article>
+                <h3>Flex Box – Parent – Align Content</h3>
+                <p><code>align-content</code> aligns flex lines when there is extra space in the cross axis. It only works with multi-line flex containers.</p>
+                <pre><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between; /* flex-start, flex-end, center, stretch, space-between, space-around */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg" alt="Align Content">
+            </article>
+
+            <article>
+                <h3>Flex Box – Child – Grow, Shrink, Order</h3>
+                <p><code>flex-grow</code> defines how much a flex item will grow relative to others, <code>flex-shrink</code> defines how much it will shrink, and <code>order</code> controls the order of items.</p>
+                <pre><code>.item {
+    flex-grow: 1; /* default 0 */
+    flex-shrink: 1; /* default 1 */
+    order: 2; /* default 0 */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg" alt="Flex Grow">
+            </article>
+
+            <article>
+                <h3>Flex Box – Child – Flex Basis, Flex Shorthand</h3>
+                <p><code>flex-basis</code> sets the initial size of a flex item. The <code>flex</code> shorthand combines <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</p>
+                <pre><code>.item {
+    flex: 1 1 200px; /* grow, shrink, basis */
+}</code></pre>
+                <img src="flex-basis.png" alt="Flex Basis">
+            </article>
+
+            <article>
+                <h3>Flex Box – Child – Align Self, Games, Task</h3>
+                <p><code>align-self</code> allows individual flex items to override the <code>align-items</code> property.</p>
+                <pre><code>.item {
+    align-self: flex-end; /* auto, flex-start, flex-end, center, baseline, stretch */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg" alt="Align Self">
+            </article>
+
+            <!-- Grid Parent -->
+            <article>
+                <h3>Grid – Parent – Template Columns</h3>
+                <p><code>grid-template-columns</code> defines the columns in a grid layout.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: 100px 200px auto; /* defines column sizes */
+}</code></pre>
+                <img 
+                    src="https://css-tricks.com/wp-content/uploads/2018/11/template-columns-rows-01.svg" alt="Grid Template Columns">
+            </article>
+
+            <article>
+                <h3>Grid – Parent – Template Rows And Gap</h3>
+                <p><code>grid-template-rows</code> defines the rows in a grid layout, and <code>gap</code> sets the spacing between grid items.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-rows: 50px 100px;
+    gap: 10px; /* row-gap and column-gap */
+}</code></pre>
+                <img 
+                    src="https://css-tricks.com/wp-content/uploads/2018/11/dddgrid-gap.svg" alt="Grid Gap">
+            </article>
+
+            <article>
+                <h3>Grid – Parent – Justify Content And Align Content</h3>
+                <p><code>justify-content</code> and <code>align-content</code> align the grid items along the main and cross axes.</p>
+                <pre><code>.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}</code></pre>
+                <img 
+                    src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-start.svg" alt="Grid Justify Content">
+            </article>
+
+            <article>
+                <h3>Grid – Parent – Complete Layout With Template Areas</h3>
+                <p><code>grid-template-areas</code> allows you to define named grid areas for easier layout management.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/11/dddgrid-template-areas.svg" alt="Grid Template Areas">
+            </article>
+
+            <!-- Grid Child -->
+            <article>
+                <h3>Grid – Child – Grid Column And Grid Row</h3>
+                <p><code>grid-column</code> and <code>grid-row</code> define the placement of grid items within the grid.</p>
+                <pre><code>.item {
+    grid-column: 1 / 3; /* start at column 1, end at column 3 */
+    grid-row: 1 / 2; /* start at row 1, end at row 2 */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row.svg" alt="Grid Column and Row">
+            </article>
+
+            <article>
+                <h3>Grid – Child – Grid Area And Trainings</h3>
+                <p><code>grid-area</code> assigns a grid item to a named area defined in <code>grid-template-areas</code>.</p>
+                <pre><code>.item {
+    grid-area: header; /* assigns to the 'header' area */
+}</code></pre>
+                <img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-area.svg" alt="Grid Area">
+            </article>
+
+            <article>
+                <h3>Grid – Min, Max And Auto Fill</h3>
+                <p><code>minmax()</code> and <code>auto-fill</code> allow for responsive grid layouts.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}</code></pre>
+                <img src="https://ishadeed.com/assets/grid-minmax/intro.png" alt="Grid Minmax">
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Flexbox & Grid Lecture Materials. All rights reserved.</p>
+        <p>Powered by: <a href="https://www.linkedin.com/in/saja-malek/">Saja Malek</a></p>
+    </footer>
+</body>
+</html>
